@@ -89,10 +89,10 @@
 
   /* ─── 그리드 & 레이아웃 (Grid & Layout) ────────────────── */
 
-  --wrapper-max: 1272px;
+  --container-max: 1272px;
   /* --wrapper-desktop: 1920px;s */
-  --wrapper-tablet: 688px;
-  --wrapper-mobile: 360px;
+  --container-tablet: 688px;
+  --container-mobile: 360px;
 
   --grid-gutter-desktop: 0; /* max-width 컨테이너 방식 */
   --grid-gutter-tablet: 24px; /* 12컬럼 */
