@@ -3,7 +3,7 @@
   /* 폰트 패밀리 */
   --font-primary: 'Noto Sans KR', sans-serif;
   --font-logo: 'Noto Sans', sans-serif;
-  --font-icon: 'Material Symbols Rounded', sans-serif;
+  --font-icon: 'Material Icons', sans-serif;
 
   /* 헤딩 크기 */
   --text-heading-3xl: 72px;
@@ -126,7 +126,6 @@ body {
   font-size: var(--text-heading-2xl);
   line-height: var(--leading-heading-2xl);
   font-weight: var(--weight-bold);
-  letter-spacing: var(--tracking-heading-2xl);
 }
 .text-heading-xl {
   font-family: var(--font-primary);
