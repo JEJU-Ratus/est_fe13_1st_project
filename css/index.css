@@ -54,6 +54,11 @@
   scroll-marker-group: after;
 }
 
+.curriculum__track:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
 /* ── Slide ──────────────────────────────────── */
 .curriculum__slide {
   display: flex;
@@ -114,6 +119,12 @@ summary {
   font-weight: 600;
   list-style: none;
   cursor: pointer;
+}
+
+summary:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+  border-radius: var(--radius-m);
 }
 
 summary > span {
@@ -341,6 +352,11 @@ details[open] summary::after {
 .curriculum__track::scroll-button(*):hover {
   background-color: var(--color-primary);
   color: var(--color-white);
+}
+
+.curriculum__track::scroll-button(*):focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
 }
 
 .curriculum__track::scroll-button(left) {
