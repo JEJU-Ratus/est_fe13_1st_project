@@ -388,12 +388,12 @@ details[open] summary::after {
 
 /* ── Fallback ───────────────────────────────── */
 @supports not (scroll-marker-group: after) {
-  .curriculum__track {
+  .curriculum-track {
     scrollbar-width: thin;
     scrollbar-color: var(--color-primary) transparent;
   }
 
-  .curriculum__header::after {
+  .curriculum-header::after {
     color: var(--color-primary);
     content: "좌우로 스크롤하여 커리큘럼을 확인해보세요";
   }
