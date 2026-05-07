@@ -11,24 +11,28 @@
   --base-unit: 27px;
   --base-font: 16px;
 
+  /* 여백 */
+  --tablet-side-pd: 40px; /* 태블릿 좌우 여백 */
+  --mob-side-pd: 16px; /* 모바일 좌우 여백 */
+
   /* 폰트 패밀리 */
   --font-primary: "Noto Sans KR", sans-serif;
   --font-logo: "Noto Sans", sans-serif;
   --font-icon: "Material Icons", sans-serif;
 
   /* 헤딩 요소 */
-  --text-heading-3xl: calc(var(--base-font) * 4.5);
-  --text-heading-2xl: calc(var(--base-font) * 3);
-  --text-heading-xl: calc(var(--base-font) * 2);
-  --text-heading-l: calc(var(--base-font) * 1.25);
-  --text-logo: calc(var(--base-font) * 1.125);
+  --heading-3xl: calc(var(--base-font) * 4.5); /* 72px */
+  --heading-2xl: calc(var(--base-font) * 3); /* 48px */
+  --heading-xl: calc(var(--base-font) * 2); /* 32px */
+  --heading-l: calc(var(--base-font) * 1.25); /* 20px */
+  --heading-logo: calc(var(--base-font) * 1.125); /* 18px */
 
   /* 본문 크기 */
-  --text-body-2xl: calc(var(--base-font) * 2.25);
-  --text-body-xl: calc(var(--base-font) * 1.5);
-  --text-body-l: calc(var(--base-font) * 1.25);
-  --text-body-m: var(--base-font);
-  --text-body-s: calc(var(--base-font) * 0.875);
+  --body-2xl: calc(var(--base-font) * 2.25); /* 36px */
+  --body-xl: calc(var(--base-font) * 1.5); /* 24px */
+  --body-l: calc(var(--base-font) * 1.25); /* 20px */
+  --body-m: var(--base-font); /* 16px */
+  --body-s: calc(var(--base-font) * 0.875); /* 14px */
 
   /* 굵기 (Font Weight) */
   --weight-bold: 700;
@@ -57,9 +61,42 @@
   --gradient-purple-pink: linear-gradient(90deg, #ad46ff 0%, #f6339a 100%);
   --gradient-bg: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
 }
+/* body */
+body {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-regular);
+}
+/* 헤딩 위계 */
+.text-heading-3xl {
+  font-size: var(--heading-3xl);
+  line-height: calc(var(--base-unit) * 3);
+}
+.text-heading-2xl {
+  font-size: var(--heading-2xl);
+  line-height: calc(var(--base-unit) * 2);
+}
+.text-heading-xl {
+  font-size: var(--heading-xl);
+  line-height: calc(var(--base-unit) * 1.168);
+}
+.text-heading-l {
+  font-size: var(--heading-l);
+  line-height: var(--base-unit);
+}
+.text-logo {
+  font-size: var(--heading-l);
+  line-height: var(--base-unit);
+}
 
+/* 레이아웃 */
+.hidden {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
+}
 /* ─── 컨테이너 (Container) ──────────────────────────────── */
-
 .container {
   width: 100%;
   max-width: var(--container-max);
@@ -77,4 +114,56 @@
     padding: var(--base-unit) 0;
     max-width: 328px;
   }
+}
+/* icon-box */
+.icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  background-color: var(--color-primary-10); /* 연한 블루 배경 */
+  border-radius: 14px;
+}
+.icon-box span {
+  font-size: var(--body-xl);
+  color: var(--color-primary);
+}
+
+/* 버튼 */
+.btn {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 20px 40px;
+  background-color: var(--color-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+}
+.btn-header {
+  padding: 4px 9px;
+}
+.btn-mob {
+  padding: 16px 116px;
+}
+
+.stat-item > p {
+  text-align: center;
+}
+.stat-item p:first-child {
+  background: var(--gradient-blue-green);
+  background-clip: text;
+  font-size: var(--body-2xl);
+  color: transparent;
+}
+
+.badge {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--gradient-blue-green);
+  color: white;
+  border-radius: 9999px;
 }
