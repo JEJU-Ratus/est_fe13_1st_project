@@ -11,18 +11,9 @@
 /* review */
 
 /* curriculum - 안건욱 */
-.flex-column {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-.margin-auto {
-  margin-inline: auto;
-}
 
 /* ── Block ──────────────────────────────────── */
 .curriculum {
-  padding: 64px 0;
   background: linear-gradient(
     to bottom,
     var(--color-white),
