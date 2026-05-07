@@ -7,7 +7,120 @@
 /* solution */
 
 /* result */
+.result {
+  /* 상하 패딩 최적화 (필요에 따라 0으로 조정 가능) */
+  padding: 80px 0; 
+  background: linear-gradient(135deg, #1e69ff 0%, #00ba71 100%);
+  color: var(--color-white);
+  text-align: center;
+}
 
+.result-header {
+  margin-bottom: 48px;
+}
+
+/* 공통 유리 효과 (Glassmorphism) 스타일 */
+.result-card, .partner-chip {
+  background-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--color-white);
+}
+
+/* 카드 및 칩 공통 호버 효과 */
+.result-card:hover, .partner-chip:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Grid ──────────────────────────────────── */
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.result-card {
+  padding: 48px 24px;
+  border-radius: 20px;
+  cursor: default;
+}
+
+.result-icon {
+  font-size: 2.5rem !important;
+  margin-bottom: 16px;
+  opacity: 0.9;
+}
+
+.result-value {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+}
+
+.result-label {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.result-label span {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 400;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+/* ── Partners ──────────────────────────────── */
+.partner-footer {
+  margin-top: 70px;
+}
+
+.partner-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+
+.partner-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.partner-chip {
+  padding: 10px 24px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+}
+
+/* 모바일 대응 */
+@media screen and (max-width: 1024px) {
+  .result-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media screen and (max-width: 640px) {
+  .result-grid { grid-template-columns: 1fr; }
+  .result-card { padding: 32px 20px; }
+}
 /* review */
 
 /* curriculum - 안건욱 */

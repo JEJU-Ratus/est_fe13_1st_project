@@ -163,5 +163,8 @@
   "prettier.useTabs": false,
   "prettier.semi": true,
   "prettier.singleQuote": false,
-  "prettier.trailingComma": "es5"
+  "prettier.trailingComma": "es5",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  }
 }
