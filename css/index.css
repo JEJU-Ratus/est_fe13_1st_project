@@ -37,10 +37,8 @@
 }
 .curriculum-header h2 {
   margin-bottom: 16px;
-  font-size: var(--text-heading-2xl);
 }
 .curriculum-header p {
-  font-size: var(--text-heading-l);
   color: var(--color-gray);
 }
 
@@ -298,7 +296,7 @@ details[open] summary::after {
   background: var(--gradient-blue-green);
   -webkit-background-clip: text;
   background-clip: text;
-  font-size: var(--text-body-xl);
+  font-size: var(--body-xl);
   color: transparent;
 }
 
@@ -325,6 +323,24 @@ details[open] summary::after {
 
 .curriculum-slide:last-child::scroll-marker {
   anchor-name: --last-dot;
+}
+
+.curriculum-slide:nth-child(1)::scroll-marker:target-current {
+  width: 3rem;
+  background: var(--gradient-blue-cyan);
+  border-radius: 9999px;
+}
+
+.curriculum-slide:nth-child(2)::scroll-marker:target-current {
+  width: 3rem;
+  background: var(--gradient-yellow-orange);
+  border-radius: 9999px;
+}
+
+.curriculum-slide:nth-child(3)::scroll-marker:target-current {
+  width: 3rem;
+  background: var(--gradient-purple-pink);
+  border-radius: 9999px;
 }
 
 /* ── Scroll Buttons ─────────────────────────── */
