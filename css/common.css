@@ -60,6 +60,12 @@
   --gradient-yellow-orange: linear-gradient(90deg, #f0b100 0%, #ff6900 100%);
   --gradient-purple-pink: linear-gradient(90deg, #ad46ff 0%, #f6339a 100%);
   --gradient-bg: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
+  --gradient-bg-blue-green: linear-gradient(
+    90deg,
+    rgba(43, 127, 255, 0.08) 0%,
+    rgba(43, 127, 255, 0) 50%,
+    rgba(0, 201, 80, 0.05) 100%
+  );
 }
 /* body */
 body {
@@ -89,6 +95,19 @@ body {
 }
 
 /* 레이아웃 */
+section {
+  padding: calc(var(--base-unit) * 3) 0;
+}
+@media (max-width: 768px) {
+  section {
+    padding: calc(var(--base-unit) * 3) 0;
+  }
+}
+@media (max-width: 360px) {
+  section {
+    padding: calc(var(--base-unit) * 3) 0;
+  }
+}
 .hidden {
   overflow: hidden;
   position: absolute;
