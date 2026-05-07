@@ -343,8 +343,8 @@ details[open] summary::after {
   height: 40px;
   background-color: var(--color-white);
   font-family: "Material Icons";
-  border-radius: 50%;
   cursor: pointer;
+  border-radius: 50%;
 }
 
 .curriculum-track::scroll-button(left) {
