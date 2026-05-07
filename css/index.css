@@ -1,9 +1,11 @@
 /* header */
 
 /* hero */
+/* 배경색 */
 .hero {
   background: var(--gradient-bg-blue-green);
 }
+/* 뱃지 */
 .badge-wrapper {
   display: flex;
   gap: 12px;
@@ -14,7 +16,13 @@
   background: var(--color-white);
   color: var(--color-primary);
 }
-
+/* hero 하이라이트 */
+.hero-highlight {
+  background: linear-gradient(90deg, #155dfc 0%, #00c950 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
 /* problem */
 
 /* solution */
@@ -138,13 +146,21 @@
 
 /* ── Mobile Responsive ── */
 @media screen and (max-width: 1024px) {
-  .result .result-grid { grid-template-columns: repeat(2, 1fr); }
+  .result .result-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media screen and (max-width: 640px) {
-  .result .result-grid { grid-template-columns: 1fr; }
-  .result .result-card { padding: 32px 20px; }
-  .result .result-header { margin-bottom: 32px; }
+  .result .result-grid {
+    grid-template-columns: 1fr;
+  }
+  .result .result-card {
+    padding: 32px 20px;
+  }
+  .result .result-header {
+    margin-bottom: 32px;
+  }
 }
 /* review */
 
