@@ -1,9 +1,11 @@
 /* header */
 
 /* hero */
+/* 배경색 */
 .hero {
   background: var(--gradient-bg-blue-green);
 }
+/* 뱃지 */
 .badge-wrapper {
   display: flex;
   gap: 12px;
@@ -14,7 +16,13 @@
   background: var(--color-white);
   color: var(--color-primary);
 }
-
+/* hero 하이라이트 */
+.hero-highlight {
+  background: linear-gradient(90deg, #155dfc 0%, #00c950 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
 /* problem */
 
 /* solution */

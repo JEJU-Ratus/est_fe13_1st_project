@@ -76,22 +76,27 @@ body {
 .text-heading-3xl {
   font-size: var(--heading-3xl);
   line-height: calc(var(--base-unit) * 3);
+  font-weight: var(--weight-bold);
 }
 .text-heading-2xl {
   font-size: var(--heading-2xl);
   line-height: calc(var(--base-unit) * 2);
+  font-weight: var(--weight-bold);
 }
 .text-heading-xl {
   font-size: var(--heading-xl);
   line-height: calc(var(--base-unit) * 1.168);
+  font-weight: var(--weight-bold);
 }
 .text-heading-l {
   font-size: var(--heading-l);
   line-height: var(--base-unit);
+  font-weight: var(--weight-bold);
 }
 .text-logo {
   font-size: var(--heading-l);
   line-height: var(--base-unit);
+  font-weight: var(--weight-bold);
 }
 
 /* 레이아웃 */
