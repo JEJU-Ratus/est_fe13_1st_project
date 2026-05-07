@@ -87,6 +87,7 @@
 
 .curriculum-slide-content h3 {
   font-size: var(--text-heading-xl);
+  font-weight: 700;
   overflow-wrap: break-word;
 }
 
