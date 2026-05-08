@@ -23,8 +23,38 @@
   </head>
   <body>
     <!-- header - 김기용 -->
-    <header>
-      <h1>header</h1>
+    <header class="header">
+      <div class="container">
+        <h1 class="logo">
+          <a href="index.html">
+            <img src="img/logo.png" alt="logo" />
+            <span class="hidden">EC</span>
+          </a>
+          <a href="index.html " class="text-logo">이스트 캠프</a>
+        </h1>
+        <nav>
+          <ul>
+            <li>
+              <a href="#" class="text-nav">소개</a>
+            </li>
+            <li>
+              <a href="#" class="text-nav">커리큘럼</a>
+            </li>
+            <li>
+              <a href="#" class="text-nav">성과</a>
+            </li>
+            <li>
+              <a href="#" class="text-nav">수강생 후기</a>
+            </li>
+            <li>
+              <a href="#" class="text-nav">FAQ</a>
+            </li>
+            <li>
+              <a href="#" class="btn btn-header">지원하기</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main>
       <!-- hero sectiton - 송민혁 -->
@@ -79,7 +109,7 @@
       <section class="result" aria-labelledby="result-title">
         <div class="container flex-column margin-auto">
           <header class="result-header">
-            <h2 id="result-title" class="text-heading-2xl">검증된 성과</h2>
+            <h3 id="result-title" class="text-heading-2xl">검증된 성과</h3>
             <p class="text-heading-l">숫자로 증명하는 이스트캠프의 실적</p>
           </header>
 
@@ -146,8 +176,84 @@
       </section>
 
       <!-- review section - 강형규 -->
-      <section>
-        <h2>review section - 강형규</h2>
+      <section class="review" aria-labelledby="review-title">
+        <div class="container flex-column margin-auto">
+          <header class="review-header">
+            <h3 id="review-title" class="text-heading-2xl">수강생 후기</h3>
+            <p class="review-subtitle">
+              이스트소프트와 커리어를 전환한 분들의 이야기
+            </p>
+          </header>
+
+          <div class="review-grid">
+            <article class="review-card">
+              <div class="review-rating">
+                <span class="material-icons">star</span>
+                <span class="material-icons">star</span>
+                <span class="material-icons">star</span>
+                <span class="material-icons">star</span>
+                <span class="material-icons">star</span>
+              </div>
+              <p class="review-text">
+                "체계적인 커리큘럼과 멘토링 덕분에 6개월 만에 비전공자에서
+                개발자로 성공했습니다!"
+              </p>
+              <div class="review-author">
+                <div class="author-info">
+                  <span class="author-name">김OO</span>
+                  <span class="author-path">영업 → 개발자</span>
+                </div>
+                <span class="company-badge naver">네이버</span>
+              </div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-rating">
+                <span class="material-icons">star</span>
+                <span class="material-icons">star</span>
+                <span class="material-icons">star</span>
+                <span class="material-icons">star</span>
+                <span class="material-icons">star</span>
+              </div>
+              <p class="review-text">
+                "실무 중심의 프로젝트를 경험하며 현업에서 정말 필요한 역량이
+                무엇인지 알게 되었습니다."
+              </p>
+              <div class="review-author">
+                <div class="author-info">
+                  <span class="author-name">이OO</span>
+                  <span class="author-path">디자인 → 기획자</span>
+                </div>
+                <span class="company-badge kakao">카카오</span>
+              </div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-rating">
+                <span class="material-icons">star</span>
+                <span class="material-icons">star</span>
+                <span class="material-icons">star</span>
+                <span class="material-icons">star</span>
+                <span class="material-icons">star</span>
+              </div>
+              <p class="review-text">
+                "EST soft 취업 연계로 원하는 회사의 입사 제안을 받을 수
+                있었습니다. 감사합니다!"
+              </p>
+              <div class="review-author">
+                <div class="author-info">
+                  <span class="author-name">박OO</span>
+                  <span class="author-path">마케팅 → 데이터</span>
+                </div>
+                <span class="company-badge toss">토스</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="review-footer">
+            <a href="#" class="btn btn-review-more">더 많은 후기 보기</a>
+          </div>
+        </div>
       </section>
 
       <!-- curriculum section - 안건욱 -->

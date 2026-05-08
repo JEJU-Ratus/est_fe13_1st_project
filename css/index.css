@@ -1,6 +1,50 @@
-/* header */
+/* ------------ header ------------------------------ */
+.header {
+  position: fixed;
+  height: 64px;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-white);
+  z-index: 1000;
+  align-content: center;
+  box-shadow: 0px 4px 5px 0 rgba(0, 0, 0, 0.3);
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+}
+/* logo */
+header .container .logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s ease;
+}
+header .container .logo:hover {
+  transform: scale(1.03);
+}
+/* 메뉴 */
+header .container nav {
+  align-content: center;
+}
+header .container nav ul {
+  display: flex;
+  gap: 24px;
+}
+header .container nav ul li {
+  display: flex;
+  justify-content: center;
+}
+header .container nav .text-nav {
+  font-size: var(--base-font);
+  line-height: var(--base-unit);
+}
+header .container nav .text-nav:hover {
+  color: var(--color-primary);
+}
 
-/* hero */
+/* ------------ hero ------------------------------ */
 /* 배경색 */
 .hero {
   background: var(--gradient-bg-blue-green);
@@ -8,14 +52,15 @@
 /* hero - 구조 */
 .hero-wrapper {
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 /* content - 좌측 설명 구조 */
 .hero-content {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: flex;
   gap: 35px;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 /* 뱃지 */
@@ -38,13 +83,19 @@
 }
 /* hero - 설명 */
 .hero-proposal p {
-  color: var(--color-gray);
   font-size: var(--body-l);
+  color: var(--color-gray);
+}
+/* hero - 우측 media */
+.hero-media {
+  display: flex;
+  gap: 28px;
+  flex-direction: column;
 }
 /* hero - 우측 비디오 */
 .hero-video {
-  border-radius: 20px;
   overflow: hidden;
+  border-radius: 20px;
 }
 .hero-video iframe {
   display: block;
@@ -53,12 +104,21 @@
   border-radius: 20px;
   transform: scale(1.03);
 }
-/* hero -  */
-/* problem */
+/* hero - status */
+.hero-stat-wrapper {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+.hero-stat-wrapper .stat-item {
+  flex: 1;
+}
 
-/* solution */
+/* ------------ problem ------------------------------ */
 
-/* result */
+/* ------------ solution ------------------------------ */
+
+/* ------------ result ------------------------------ */
 .result {
   padding: 80px 0;
   background: linear-gradient(135deg, #1e69ff 0%, #00ba71 100%);
@@ -71,47 +131,47 @@
 }
 
 .result .result-header h2 {
-  font-weight: 800;
   margin-bottom: 12px;
+  font-weight: 800;
 }
 
 /* ── Result Grid & Card ── */
 .result .result-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  max-width: 1200px;
-  width: 90%;
   margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .result .result-card {
+  padding: 48px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   background-color: rgba(255, 255, 255, 0.12);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 20px;
-  padding: 48px 24px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .result .result-card:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-  transform: translateY(-8px);
   border-color: rgba(255, 255, 255, 0.4);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-8px);
 }
 
 .result .result-card .result-icon {
-  font-size: 2.5rem;
-  margin-bottom: 16px;
   display: inline-block;
+  margin-bottom: 16px;
+  font-size: 2.5rem;
 }
 
 .result .result-card .result-value {
+  margin-bottom: 8px;
   font-size: 2.8rem;
   font-weight: 800;
-  margin-bottom: 8px;
   letter-spacing: -1px;
 }
 
@@ -123,10 +183,10 @@
 
 .result .result-card .result-label span {
   display: block;
+  margin-top: 4px;
   font-size: 0.85rem;
   font-weight: 400;
   opacity: 0.7;
-  margin-top: 4px;
 }
 
 /* ── Partner Section ── */
@@ -135,44 +195,46 @@
 }
 
 .result .partner-title {
+  margin-bottom: 24px;
   font-size: 0.85rem;
   font-weight: 600;
-  letter-spacing: 1px;
-  margin-bottom: 24px;
-  opacity: 0.6;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.6;
 }
 
 .result .partner-list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 12px;
-  max-width: 1000px;
+  justify-content: center;
+  flex-wrap: wrap;
   margin: 0 auto;
+  max-width: 1000px;
 }
 
 /* 기업 칩 스타일 (유리 효과 공통 적용) */
 .result .partner-chip {
-  background-color: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 10px 24px;
-  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.12);
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--color-white);
-  cursor: pointer;
   transition: all 0.3s ease;
-  outline: none;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 999px;
+  letter-spacing: 0; /* 자간 초기화 */
+  white-space: nowrap; /* 텍스트 줄바꿈 방지 */
 }
 
 .result .partner-chip:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-  transform: translateY(-5px);
   border-color: rgba(255, 255, 255, 0.4);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-5px);
 }
 
 /* ── Mobile Responsive ── */
@@ -193,9 +255,125 @@
     margin-bottom: 32px;
   }
 }
-/* review */
+/* ------------ review ------------------------------ */
+.review {
+  /* section의 상하 패딩은 common.css 가이드(calc(var(--base-unit) * 3))를 따름 */
+  background-color: var(--color-bg-light);
+}
 
-/* curriculum - 안건욱 */
+.review-header {
+  text-align: center;
+  /* 여백을 base-unit(27px)의 배수로 설정하여 일관성 유지 */
+  margin-bottom: calc(var(--base-unit) * 2);
+}
+
+.review-subtitle {
+  color: var(--color-gray);
+  font-size: var(--body-l); /* common.css 20px 반영 */
+  margin-top: 8px;
+}
+
+/* Review Grid */
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--base-unit); /* 27px 간격 */
+  margin-bottom: calc(var(--base-unit) * 1.5);
+}
+
+/* Review Card */
+.review-card {
+  background: var(--color-white);
+  border-radius: 14px; /* icon-box의 곡률과 통일 */
+  box-shadow: 4px 16px 15px -7px rgba(0, 0, 0, 0.1); /* badge의 그림자값 활용 */
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-gray-20);
+  transition: all 0.2s ease; /* .btn의 트랜지션 타임 0.2s와 통일 */
+}
+
+.review-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-primary-75);
+}
+
+/* 별점 영역 */
+.review-rating {
+  color: #ffb800; /* 포인트 컬러 */
+  margin: 20px 20px 0; /* 내부 위치만 마진으로 고정 */
+}
+
+.review-rating span {
+  font-size: var(--body-l);
+}
+
+/* 후기 본문 */
+.review-text {
+  font-size: var(--body-m); /* 16px */
+  line-height: var(--base-unit); /* 27px */
+  color: var(--color-black);
+  margin: 16px 20px calc(var(--base-unit) * 1);
+  flex-grow: 1;
+}
+
+/* 작성자 정보 영역 */
+.review-author {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--color-bg-gray);
+  margin: 0 20px 20px;
+  padding-top: 16px;
+}
+
+.author-name {
+  display: block;
+  font-weight: var(--weight-bold);
+  font-size: var(--body-m);
+}
+
+.author-path {
+  font-size: var(--body-s); /* 14px */
+  color: var(--color-gray);
+}
+
+/* 기업 배지 - common.css의 뱃지 느낌 차용 */
+.company-badge {
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: var(--weight-medium);
+}
+
+.naver { background: #e7f9ed; color: #03c75a; }
+.kakao { background: #fff9e6; color: #3c1e1e; }
+.toss { background: #ebf3ff; color: #0064ff; }
+
+/* 하단 버튼 */
+.btn-review-more {
+  display: block;
+  text-align: center;
+  width: 100%;
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.btn-review-more:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* 반응형 */
+@media screen and (max-width: 1024px) {
+  .review-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media screen and (max-width: 768px) {
+  .review-grid { grid-size: 1fr; }
+  .review-header { margin-bottom: var(--base-unit); }
+}
+
+/* ------------ curriculum(안건욱) ------------------------------ */
 /* 커리큘럼 블록
    - 커리큘럼 전체 섹션의 레이아웃과 배경을 담당
    - 패딩은 섹션 상하 여백을 정의, 배경은 위->아래 그라데이션으로 시각적 구분을 줌 */
@@ -695,6 +873,6 @@ details[open] summary::after {
   }
 }
 
-/* cta */
+/* ------------ cta ------------------------------ */
 
-/* footer */
+/* ------------ footer ------------------------------ */
