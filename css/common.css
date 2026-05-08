@@ -171,9 +171,9 @@ section {
   color: white;
   text-decoration: none;
   transition: all 0.2s ease;
+  transition: 0.3s ease;
   box-sizing: border-box;
   border-radius: 10px;
-  transition: 0.3s ease;
 }
 .btn-header {
   padding: 4px 9px;
