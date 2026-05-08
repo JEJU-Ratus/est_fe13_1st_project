@@ -1,10 +1,68 @@
-/* header */
+/* ------------ header ------------------------------ */
+.header {
+  align-content: center;
+  box-shadow: 0px 4px 5px 0 rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  height: 64px;
+  background: var(--color-white);
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+}
+/* logo */
+header .container .logo {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  transition: 0.3s ease;
+}
+header .container .logo:hover {
+  transform: scale(1.03);
+}
+/* 메뉴 */
+header .container nav {
+  align-content: center;
+}
+header .container nav ul {
+  display: flex;
+  gap: 24px;
+}
+header .container nav ul li {
+  display: flex;
+  justify-content: center;
+}
+header .container nav .text-nav {
+  font-size: var(--base-font);
+  line-height: var(--base-unit);
+}
+header .container nav .text-nav:hover {
+  color: var(--color-primary);
+}
 
-/* hero */
+/* ------------ hero ------------------------------ */
 /* 배경색 */
 .hero {
   background: var(--gradient-bg-blue-green);
 }
+/* hero - 구조 */
+.hero-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* content - 좌측 설명 구조 */
+.hero-content {
+  display: flex;
+  gap: 35px;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
 /* 뱃지 */
 .badge-wrapper {
   display: flex;
@@ -16,23 +74,51 @@
   background: var(--color-white);
   color: var(--color-primary);
 }
-/* hero 하이라이트 */
+/* hero - 하이라이트 */
 .hero-highlight {
   background: linear-gradient(90deg, #155dfc 0%, #00c950 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
-/* hero 설명 */
+/* hero - 설명 */
 .hero-proposal p {
-  color: var(--color-gray);
   font-size: var(--body-l);
+  color: var(--color-gray);
 }
-/* problem */
+/* hero - 우측 media */
+.hero-media {
+  display: flex;
+  gap: 28px;
+  flex-direction: column;
+}
+/* hero - 우측 비디오 */
+.hero-video {
+  overflow: hidden;
+  border-radius: 20px;
+}
+.hero-video iframe {
+  display: block;
+  width: 600px;
+  height: 337px;
+  border-radius: 20px;
+  transform: scale(1.03);
+}
+/* hero - status */
+.hero-stat-wrapper {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+.hero-stat-wrapper .stat-item {
+  flex: 1;
+}
 
-/* solution */
+/* ------------ problem ------------------------------ */
 
-/* result */
+/* ------------ solution ------------------------------ */
+
+/* ------------ result ------------------------------ */
 .result {
   padding: 80px 0;
   background: linear-gradient(135deg, #1e69ff 0%, #00ba71 100%);
@@ -45,47 +131,47 @@
 }
 
 .result .result-header h2 {
-  font-weight: 800;
   margin-bottom: 12px;
+  font-weight: 800;
 }
 
 /* ── Result Grid & Card ── */
 .result .result-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  max-width: 1200px;
-  width: 90%;
   margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .result .result-card {
+  padding: 48px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   background-color: rgba(255, 255, 255, 0.12);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 20px;
-  padding: 48px 24px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .result .result-card:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-  transform: translateY(-8px);
   border-color: rgba(255, 255, 255, 0.4);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-8px);
 }
 
 .result .result-card .result-icon {
-  font-size: 2.5rem;
-  margin-bottom: 16px;
   display: inline-block;
+  margin-bottom: 16px;
+  font-size: 2.5rem;
 }
 
 .result .result-card .result-value {
+  margin-bottom: 8px;
   font-size: 2.8rem;
   font-weight: 800;
-  margin-bottom: 8px;
   letter-spacing: -1px;
 }
 
@@ -97,10 +183,10 @@
 
 .result .result-card .result-label span {
   display: block;
+  margin-top: 4px;
   font-size: 0.85rem;
   font-weight: 400;
   opacity: 0.7;
-  margin-top: 4px;
 }
 
 /* ── Partner Section ── */
@@ -109,44 +195,46 @@
 }
 
 .result .partner-title {
+  margin-bottom: 24px;
   font-size: 0.85rem;
   font-weight: 600;
-  letter-spacing: 1px;
-  margin-bottom: 24px;
-  opacity: 0.6;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.6;
 }
 
 .result .partner-list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 12px;
-  max-width: 1000px;
+  justify-content: center;
+  flex-wrap: wrap;
   margin: 0 auto;
+  max-width: 1000px;
 }
 
 /* 기업 칩 스타일 (유리 효과 공통 적용) */
 .result .partner-chip {
-  background-color: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 10px 24px;
-  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.12);
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--color-white);
-  cursor: pointer;
+  letter-spacing: 0; /* 자간 초기화 */
+  white-space: nowrap; /* 텍스트 줄바꿈 방지 */
   transition: all 0.3s ease;
-  outline: none;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 999px;
 }
 
 .result .partner-chip:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-  transform: translateY(-5px);
   border-color: rgba(255, 255, 255, 0.4);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-5px);
 }
 
 /* ── Mobile Responsive ── */
@@ -167,21 +255,144 @@
     margin-bottom: 32px;
   }
 }
-/* review */
+/* ------------ review ------------------------------ */
+.review {
+  /* section의 상하 패딩은 common.css 가이드(calc(var(--base-unit) * 3))를 따름 */
+  background-color: var(--color-bg-light);
+}
 
-/* curriculum - 안건욱 */
-.flex-column {
+.review-header {
+  /* 여백을 base-unit(27px)의 배수로 설정하여 일관성 유지 */
+  margin-bottom: calc(var(--base-unit) * 2);
+  text-align: center;
+}
+
+.review-subtitle {
+  margin-top: 8px;
+  font-size: var(--body-l); /* common.css 20px 반영 */
+  color: var(--color-gray);
+}
+
+/* Review Grid */
+.review-grid {
+  display: grid;
+  gap: var(--base-unit); /* 27px 간격 */
+  margin-bottom: calc(var(--base-unit) * 1.5);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Review Card */
+.review-card {
   display: flex;
-  justify-content: center;
   flex-direction: column;
-}
-.margin-auto {
-  margin-inline: auto;
+  border: 1px solid var(--color-gray-20);
+  box-shadow: 4px 16px 15px -7px rgba(0, 0, 0, 0.1); /* badge의 그림자값 활용 */
+  background: var(--color-white);
+  transition: all 0.2s ease; /* .btn의 트랜지션 타임 0.2s와 통일 */
+  border-radius: 14px; /* icon-box의 곡률과 통일 */
 }
 
-/* ── Block ──────────────────────────────────── */
+.review-card:hover {
+  border-color: var(--color-primary-75);
+  transform: translateY(-8px);
+}
+
+/* 별점 영역 */
+.review-rating {
+  margin: 20px 20px 0; /* 내부 위치만 마진으로 고정 */
+  color: #ffb800; /* 포인트 컬러 */
+}
+
+.review-rating span {
+  font-size: var(--body-l);
+}
+
+/* 후기 본문 */
+.review-text {
+  flex-grow: 1;
+  margin: 16px 20px calc(var(--base-unit) * 1);
+  font-size: var(--body-m); /* 16px */
+  line-height: var(--base-unit); /* 27px */
+  color: var(--color-black);
+}
+
+/* 작성자 정보 영역 */
+.review-author {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 20px 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-bg-gray);
+}
+
+.author-name {
+  display: block;
+  font-size: var(--body-m);
+  font-weight: var(--weight-bold);
+}
+
+.author-path {
+  font-size: var(--body-s); /* 14px */
+  color: var(--color-gray);
+}
+
+/* 기업 배지 - common.css의 뱃지 느낌 차용 */
+.company-badge {
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: var(--weight-medium);
+  border-radius: 9999px;
+}
+
+.naver {
+  background: #e7f9ed;
+  color: #03c75a;
+}
+.kakao {
+  background: #fff9e6;
+  color: #3c1e1e;
+}
+.toss {
+  background: #ebf3ff;
+  color: #0064ff;
+}
+
+/* 하단 버튼 */
+.btn-review-more {
+  display: block;
+  border: 1px solid var(--color-primary);
+  width: 100%;
+  background-color: transparent;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.btn-review-more:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* 반응형 */
+@media screen and (max-width: 1024px) {
+  .review-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  .review-grid {
+    --grid-size: 1fr;
+  }
+  .review-header {
+    margin-bottom: var(--base-unit);
+  }
+}
+
+/* ------------ curriculum(안건욱) ------------------------------ */
+/* 커리큘럼 블록
+   - 커리큘럼 전체 섹션의 레이아웃과 배경을 담당
+   - 패딩은 섹션 상하 여백을 정의, 배경은 위->아래 그라데이션으로 시각적 구분을 줌 */
 .curriculum {
-  padding: 64px 0;
   background: linear-gradient(
     to bottom,
     var(--color-white),
@@ -190,6 +401,9 @@
 }
 
 /* ── Header ─────────────────────────────────── */
+/* 커리큘럼 헤더
+   - 섹션 제목과 부제목을 가운데 정렬
+   - 모바일 시 폰트 크기 및 간격을 조절할 여지 있음 */
 .curriculum-header {
   margin-bottom: 48px;
   text-align: center;
@@ -202,6 +416,10 @@
 }
 
 /* ── Track (scroll container) ───────────────── */
+/* 트랙(스크롤 컨테이너)
+   - 가로 스크롤로 슬라이드를 보여주는 컨테이너
+   - `scroll-snap`을 사용해 슬라이드 정렬을 보장
+   - `overscroll-behavior-x: contain`으로 페이지 스크롤과 분리 */
 .curriculum-track {
   display: flex;
   gap: 32px;
@@ -215,12 +433,18 @@
   scroll-marker-group: after;
 }
 
+/* 포커스 스타일
+   - 키보드 접근성을 위해 포커스 시 시각적 표시를 제공 */
 .curriculum-track:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 4px;
 }
 
 /* ── Slide ──────────────────────────────────── */
+/* 개별 슬라이드
+   - 트랙 내부의 각 카드(슬라이드)를 표현
+   - 기본적으로 100% 너비로 설정해 뷰포트 하나에 하나의 슬라이드가 보이도록 함
+   - 패딩과 테두리로 카드 스타일링, 반응형에서 세로 정렬로 전환 */
 .curriculum-slide {
   display: flex;
   gap: 32px;
@@ -235,6 +459,9 @@
   box-sizing: border-box;
 }
 
+/* 슬라이드 내부 컬럼 분배
+   - 좌우 열 비율을 동일하게 주기 위해 `flex:1` 사용
+   - `min-width:0`으로 내용이 넘칠 때 flexbox 축소를 허용 */
 .curriculum-slide > * {
   flex: 1;
   min-width: 0;
@@ -244,6 +471,8 @@
   margin-bottom: 24px;
 }
 
+/* 슬라이드 제목 스타일
+   - 큰 제목은 줄 바꿈을 허용하여 레이아웃 깨짐 방지 */
 .curriculum-slide-content h3 {
   font-size: var(--text-heading-xl);
   font-weight: 700;
@@ -251,6 +480,9 @@
 }
 
 /* ── Slide Tag (pill label) ─────────────────── */
+/* 슬라이드 태그(필형 레이블)
+   - 작은 라벨 형태로 단계(1단계/2단계 등)를 표시
+   - 둥근 pill 스타일로 가독성 제공 */
 .curriculum-slide-tag {
   display: inline-flex;
   gap: 16px;
@@ -263,11 +495,16 @@
 }
 
 /* ── Details / Accordion base ───────────────── */
+/* details/summary 아코디언 기본
+   - `details` 요소를 커스텀 애니메이션으로 열고 닫기 위해 스타일을 적용
+   - `::details-content`는 브라우저별 구현 차이를 고려해 트랜지션을 설정 
+   - `interpolate-size: allow-keywords;`는 `block-size`를 `auto`로 애니매이션 가능하게 함*/
 details {
   overflow: hidden;
   interpolate-size: allow-keywords;
 }
 
+/* `transition-behavior: allow-discrete;`는 `content-visibility`에 애니메이션 적용 가능하게 함 */
 details::details-content {
   transition:
     block-size 0.3s,
@@ -280,6 +517,10 @@ details[open]::details-content {
   block-size: auto;
 }
 
+/* summary(아코디언 제목)
+   - 제목은 좌우 정렬로 요약 텍스트와 상태 아이콘을 배치
+   - 포커스 시 접근성 표시를 추가하여 키보드 사용자에게 명확히 함
+   - 커스텀 마커(아이콘)는 `::after`로 삽입해 회전 애니메이션 적용 */
 summary {
   display: flex;
   align-items: center;
@@ -301,6 +542,7 @@ summary > span {
   align-items: center;
 }
 
+/* 기본 마커를 material icons로 대체 */
 summary::-webkit-details-marker {
   display: none;
 }
@@ -316,6 +558,9 @@ details[open] summary::after {
 }
 
 /* ── Core Accordion ─────────────────────────── */
+/* 핵심 학습(코어) 아코디언 스타일
+   - 핵심 학습 목록의 제목과 항목 스타일을 정의
+   - 각 항목은 좌측 점(원)으로 강조하여 목록성이 높음 */
 .curriculum-core {
   margin-bottom: 16px;
 }
@@ -359,6 +604,9 @@ details[open] summary::after {
 }
 
 /* ── AI Accordion ───────────────────────────── */
+/* AI 활용 학습 블록
+   - AI 관련 학습 항목을 시각적으로 구분하기 위한 스타일
+   - 배경/테두리 색상으로 카드 느낌을 줌 */
 .curriculum-ai-title {
   padding: 12px 16px;
   background-color: var(--color-bg-purple);
@@ -383,11 +631,16 @@ details[open] summary::after {
 }
 
 /* ── Slide Visual (right column) ────────────── */
+/* 슬라이드 비주얼 열(오른쪽 열)
+   - 이미지, 프로젝트 카드, 통계 등 시각 요소들의 공통 마진을 정의 */
 .curriculum-slide-visual > * {
   margin-bottom: 24px;
 }
 
 /* ── Project ────────────────────────────────── */
+/* 프로젝트 카드
+   - 각 슬라이드의 대표 프로젝트를 보여주는 카드 스타일
+   - 주요 색상과 패딩으로 강조함 */
 .curriculum-project {
   margin-bottom: 24px;
   padding: 24px;
@@ -396,6 +649,8 @@ details[open] summary::after {
   border-radius: 16px;
 }
 
+/* 슬라이드별 변형 배경
+   - 2번째, 3번째 슬라이드에 대해 태그/프로젝트 카드 색상을 별도 지정하여 구분 */
 .curriculum-slide:nth-child(2) .curriculum-project,
 .curriculum-slide:nth-child(2) .curriculum-slide-tag {
   background: var(--gradient-yellow-orange);
@@ -425,6 +680,9 @@ details[open] summary::after {
 }
 
 /* ── Image ──────────────────────────────────── */
+/* 프로젝트 이미지
+   - 반응형으로 이미지가 영역을 넘지 않도록 `max-width:100%` 적용
+   - `object-fit:cover`로 비율 유지하며 잘림 허용 */
 .curriculum-image {
   max-width: 100%;
   object-fit: cover;
@@ -432,6 +690,9 @@ details[open] summary::after {
 }
 
 /* ── Stats ──────────────────────────────────── */
+/* 통계(기간/프로젝트 수) 박스
+   - 플렉스로 가로 배치, 각 박스는 동일한 비율로 확장
+   - 상단 숫자는 그라데이션 텍스트로 강조 */
 .curriculum-stats {
   display: flex;
   gap: 16px;
@@ -449,6 +710,7 @@ details[open] summary::after {
   margin: 0;
 }
 
+/* 텍스트 그래디언트 */
 .curriculum-stat > p:first-child {
   display: inline-block;
   margin-bottom: 4px;
@@ -460,6 +722,9 @@ details[open] summary::after {
 }
 
 /* ── Scroll Markers ─────────────────────────── */
+/* 스크롤 마커(진행 표시 점)
+   - CSS 스크롤 마커 기능을 이용해 현재 슬라이드 상태를 시각화
+   - 지원되지 않는 브라우저는 fallback 스타일을 제공 */
 .curriculum-track::scroll-marker-group {
   display: inline-flex;
   gap: 8px;
@@ -503,6 +768,9 @@ details[open] summary::after {
 }
 
 /* ── Scroll Buttons ─────────────────────────── */
+/* 스크롤 버튼(브라우저 지원 요소)
+   - 좌우 네비게이션 버튼을 위한 스타일 (스크롤 스냅 보완)
+   - 접근성: 포커스 시 아웃라인 표시 */
 .curriculum-track::scroll-button(*) {
   display: inline-flex;
   align-items: center;
@@ -554,7 +822,8 @@ details[open] summary::after {
   outline-offset: 4px;
 }
 
-/* ── Fallback ───────────────────────────────── */
+/* Fallback: 스크롤 마커 미지원 브라우저 처리
+   - `@supports`를 사용해 기능 미지원 시 스크롤바 스타일과 안내 문구 표시 */
 @supports not (scroll-marker-group: after) {
   .curriculum-track {
     scrollbar-width: thin;
@@ -568,6 +837,8 @@ details[open] summary::after {
 }
 
 /* ── Badge ──────────────────────────────────── */
+/* 커리큘럼 배지(섹션 강조 문구)
+   - 섹션 하단의 강조 문구를 위한 배경/패딩/라운딩 스타일 */
 .curriculum-badge {
   display: inline-flex;
   gap: 8px;
@@ -586,6 +857,8 @@ details[open] summary::after {
 }
 
 /* ── Mobile ─────────────────────────────────── */
+/* 모바일 반응형
+   - 화면 폭이 작을 때 슬라이드 구조를 세로로 쌓이게 전환하여 가독성 확보 */
 @media screen and (max-width: 768px) {
   .curriculum {
     padding: 48px 0;
@@ -760,6 +1033,270 @@ details[open] summary::after {
 .cta-stats .stat-item p:first-child {
   /* 글씨를 두껍게 (bold = 700) → 숫자가 강조되어 눈에 잘 띔 */
   font-weight: var(--weight-bold);
+  /* 숫자와 설명 텍스트 사이 간격 (아래쪽 여백 8px) */
+  margin-bottom: 8px;
+}
+
+/* .stat-item 설명 텍스트 (두 번째 p: "완성기간", "취업성공율", "취업 연계") */
+.stat-item p:last-child {
+  /* 작은 글씨 (14px) - Figma body_s 크기 */
+  font-size: var(--body-s);
+  /* Figma의 gray 색상 사용 (#717282) */
+  color: var(--color-gray);
+}
+
+/* ── CTA 반응형 (모바일) ────────────────────── */
+@media screen and (max-width: 768px) {
+  .cta {
+    /* 모바일에서 상하 패딩 줄임 */
+    padding: 60px 0;
+  }
+
+  .cta-heading {
+    /* 모바일에서 제목 크기 축소 */
+    font-size: var(--heading-xl);
+  }
+
+  .cta-stats {
+    /* 모바일에서 세로 배치로 전환 */
+    flex-direction: column;
+    /* 간격 줄임 */
+    gap: 24px;
+  }
+}
+
+/* ================================================================
+   FOOTER (하단 푸터) 섹션
+   - 개인정보처리방침, ESTfamily, 문의메일 링크
+   - 소셜 미디어 아이콘 (카카오톡, 인스타그램)
+   - 회사 주소 및 연락처 정보
+   ================================================================ */
+
+/* ── Footer 전체 블록 ───────────────────────── */
+.footer {
+  /* 어두운 배경 (CTA보다 약간 더 진한 검정) */
+  background-color: #1a1a1a;
+  /* 흰색 텍스트 */
+  color: var(--color-white);
+  /* 상하 패딩 */
+  padding: 48px 0 32px;
+  /* 본문 크기 */
+  font-size: var(--body-s);
+}
+
+/* ── Footer 상단 영역 ───────────────────────── */
+/* 왼쪽: 링크들 / 오른쪽: 소셜 아이콘 */
+.footer-top {
+  /* 가로 배치 */
+  display: flex;
+  /* 양쪽 끝 배치 (space-between) */
+  justify-content: space-between;
+  /* 세로 가운데 정렬 */
+  align-items: center;
+  /* 아래쪽 여백 */
+  margin-bottom: 24px;
+}
+
+/* ── Footer 링크 영역 ───────────────────────── */
+/* "개인정보처리방침 | ESTfamily | 문의메일" */
+.footer-links {
+  /* 인라인 flex로 가로 배치 */
+  display: flex;
+  /* 항목 사이 간격 */
+  gap: 8px;
+  /* 세로 가운데 정렬 */
+  align-items: center;
+}
+
+/* ── Footer 링크 스타일 ─────────────────────── */
+.footer-links a {
+  /* 밑줄 제거 */
+  text-decoration: none;
+  /* 반투명 흰색 (보조 텍스트 느낌) */
+  color: rgba(255, 255, 255, 0.7);
+  /* 작은 글씨 */
+  font-size: var(--body-s);
+  /* 호버 전환 효과 */
+  transition: color 0.2s ease;
+}
+
+/* ── Footer 링크 호버 ───────────────────────── */
+.footer-links a:hover {
+  /* 호버 시 완전한 흰색으로 변경 */
+  color: var(--color-white);
+}
+
+/* ── Footer 구분 바(|) ──────────────────────── */
+/* 링크 사이의 "|" 구분 기호 */
+.footer-links .bar {
+  /* 더 연한 색상으로 은은하게 */
+  color: rgba(255, 255, 255, 0.3);
+  /* 좌우 여백 */
+  margin: 0 4px;
+}
+
+/* ── Footer 소셜 아이콘 영역 ──────────────────── */
+.footer-social {
+  /* 가로 배치 */
+  display: flex;
+  /* 아이콘 사이 간격 */
+  gap: 16px;
+  /* 세로 가운데 정렬 */
+  align-items: center;
+}
+
+/* ── Footer 소셜 아이콘 링크 ──────────────────── */
+.footer-social a {
+  /* 밑줄 제거 */
+  text-decoration: none;
+  /* 반투명 흰색 */
+  color: rgba(255, 255, 255, 0.7);
+  /* 아이콘 크기 */
+  font-size: 1.25rem;
+  /* 호버 전환 효과 */
+  transition: color 0.3s ease;
+}
+
+/* ── Footer 소셜 아이콘 호버 ──────────────────── */
+.footer-social a:hover {
+  /* 호버 시 완전한 흰색 */
+  color: var(--color-white);
+}
+
+/* ── Footer 정보 영역 ───────────────────────── */
+/* 주소, 문의처, 저작권 표시 */
+.footer-info {
+  /* 위쪽 구분선 (반투명) */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  /* 구분선 위 여백 */
+  padding-top: 24px;
+}
+
+/* ── Footer 정보 텍스트 공통 ──────────────────── */
+.footer-info address,
+.footer-info p {
+  /* 반투명 회색 텍스트 */
+  color: rgba(255, 255, 255, 0.5);
+  /* 작은 글씨 */
+  font-size: var(--body-s);
+  /* 줄 간격 */
+  line-height: 1.8;
+  /* address 태그의 기본 이탈릭 제거 */
+  font-style: normal;
+}
+
+/* ── 저작권 텍스트 ──────────────────────────── */
+.footer-info .copyright {
+  /* 위 여백으로 다른 정보와 분리 */
+  margin-top: 4px;
+  /* 더 연한 색상 */
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* ── Footer 반응형 (모바일) ─────────────────── */
+@media screen and (max-width: 768px) {
+  .footer-top {
+    /* 모바일에서 세로 배치 */
+    flex-direction: column;
+    /* 간격 */
+    gap: 16px;
+    /* 왼쪽 정렬 */
+    align-items: flex-start;
+  }
+
+  .footer-info {
+    /* 모바일에서 텍스트 가운데 또는 왼쪽 정렬 유지 */
+    text-align: left;
+  }
+}
+/* ── CTA 설명 텍스트 ────────────────────────── */
+/* Figma 스타일: gray = #717282 */
+.cta-desc {
+  /* Figma의 gray 색상 변수 사용 (common.css에서 #717282로 정의) */
+  color: var(--color-gray);
+  /* 본문 크기 (16px) */
+  font-size: var(--body-m);
+  /* 줄 간격 넓게 (가독성을 위해 1.7배) */
+  line-height: 1.7;
+}
+
+/* ── CTA 액션 버튼 영역 ─────────────────────── */
+.cta-action {
+  /* 버튼 위에 추가 여백 */
+  margin-top: 8px;
+}
+
+/* ── 지원하기 버튼 ──────────────────────────── */
+/* 스크린샷에서 파란색 사각형 버튼 */
+.btn-apply {
+  /* 인라인 블록으로 패딩이 적용되도록 */
+  display: inline-block;
+  /* 내부 여백 (상하 16px, 좌우 48px) */
+  padding: 16px 48px;
+  /* 파란색 배경 (프라이머리 컬러) */
+  background-color: var(--color-primary);
+  /* 흰색 텍스트 */
+  color: var(--color-white);
+  /* 밑줄 제거 (a 태그 기본 스타일 제거) */
+  text-decoration: none;
+  /* 약간 둥근 모서리 */
+  border-radius: 10px;
+  /* 글씨 크기 */
+  font-size: var(--body-m);
+  /* 중간 굵기 */
+  font-weight: var(--weight-medium);
+  /* 호버 시 부드러운 전환 효과 */
+  transition: all 0.3s ease;
+}
+
+/* ── 지원하기 버튼 호버 효과 ──────────────────── */
+.btn-apply:hover {
+  /* 호버 시 약간 밝은 파란색으로 변경 */
+  background-color: #2b7fff;
+  /* 위로 살짝 떠오르는 효과 */
+  transform: translateY(-2px);
+  /* 그림자 추가로 입체감 부여 */
+  box-shadow: 0 8px 24px rgba(21, 93, 252, 0.35);
+}
+
+/* ── CTA 구분선 (수평선) ────────────────────── */
+/* 스크린샷에서 지원하기 버튼과 4개월 통계 사이에 있는 가로 회색 선 */
+/* <hr> 태그는 HTML에서 수평 구분선을 의미하며, 기본 스타일을 리셋 후 재정의 */
+.cta-divider {
+  /* hr 태그의 기본 테두리를 완전히 제거 (브라우저마다 기본 스타일이 다름) */
+  border: none;
+  /* 위쪽에만 1px 회색 실선을 새로 추가 */
+  /* rgba(0,0,0,0.12) = 검정색 12% 불투명도 → 아주 연한 회색 선 */
+  /* 흰색 배경 위에서 은은하게 보이도록 함 */
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  /* 구분선 위아래 각각 48px 여백을 줘서 콘텐츠와 충분한 간격 확보 */
+  margin: 48px 0;
+}
+
+/* ── CTA 통계 영역 ──────────────────────────── */
+/* 스크린샷 하단의 "4개월 / 92% / EST soft" 수치 영역 */
+.cta-stats {
+  /* 가로 배치 (flex) */
+  display: flex;
+  /* 항목 사이 간격 */
+  gap: 60px;
+  /* 가운데 정렬 */
+  justify-content: center;
+  /* 세로 가운데 정렬 */
+  align-items: center;
+}
+
+/* ── 개별 통계 항목 ─────────────────────────── */
+/* common.css(176~184줄)의 .stat-item 스타일이 기본으로 적용됨: */
+/*   - .stat-item > p { text-align: center; } */
+/*   - .stat-item p:first-child { background: gradient; background-clip: text; ... } */
+/* ★ 비슷한 코드: .curriculum-stat 클래스도 동일한 통계 표시 패턴 사용 */
+
+/* .stat-item 숫자 텍스트 (첫 번째 p: "4개월", "92%", "EST soft") */
+/* Figma 스타일: body_2xl = 36px / 54px */
+.cta-stats .stat-item p:first-child {
+  /* 글씨를 두껍게 (bold = 700) → 숫자가 강조되어 눈에 잘 띔 */
+  font-weight: var(--gradient-blue-green);
   /* 숫자와 설명 텍스트 사이 간격 (아래쪽 여백 8px) */
   margin-bottom: 8px;
 }
