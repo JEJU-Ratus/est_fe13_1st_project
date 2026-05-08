@@ -412,8 +412,8 @@ header .container nav .text-nav:hover {
   margin-bottom: 16px;
 }
 .curriculum-header p {
-  color: var(--color-gray);
   margin-bottom: 16px;
+  color: var(--color-gray);
 }
 
 /* ── Track (scroll container) ───────────────── */
@@ -612,8 +612,8 @@ details[open] summary::after {
 .curriculum-ai-title {
   padding: 12px 16px;
   background-color: var(--color-bg-purple);
-  border-radius: 12px;
   font-size: 18px;
+  border-radius: 12px;
 }
 
 .curriculum-ai-title .material-icons-outlined {
