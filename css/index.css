@@ -181,6 +181,8 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 999px;
+  letter-spacing: 0; /* 자간 초기화 */
+  white-space: nowrap; /* 텍스트 줄바꿈 방지 */
 }
 
 .result .partner-chip:hover {
