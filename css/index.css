@@ -120,25 +120,58 @@ header .container nav .text-nav:hover {
 /* 레이아웃 */
 .solution {
   display: flex;
+  flex-direction: column;
+  gap: 29px;
 }
 .solution header {
-  text-align: center;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 29px;
 }
 /* 뱃지 */
 .solution-badge {
   background: var(--color-primary-10);
-  color: var(--color-primary);
   font-weight: var(--weight-bold);
+  color: var(--color-primary);
 }
 .solution-highlight {
   color: var(--color-primary);
 }
-.solution-description {
-  color: var(--color-gray);
+/* 설명 */
+.solution-desc {
   font-size: var(--body-l);
+  line-height: var(--base-unit);
+  color: var(--color-gray);
+}
+/* 카드 */
+.solution-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.solution-card-wrapper {
+  display: flex;
+  gap: 24px;
+}
+.solution-card {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 24px;
+  border: 1px solid var(--color-gray-20);
+  box-sizing: border-box;
+  border-radius: 16px;
+  flex: 1;
+}
+.solution-card-text {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+.solution-card-desc {
+  font-size: var(--body-s);
   line-height: var(--base-unit);
 }
 /* ------------ result ------------------------------ */
