@@ -147,8 +147,8 @@ project-root/
 ├── css/
 │   ├── common.css      (공통 변수, 리셋, 유틸리티)
 │   └── index.css       (페이지별 스타일)
-├── js/
-│   └── main.js
+│   └── normalize.css   (브라우저간 스타일 통일)
+│   └── reset.css       (스타일 초기화)
 └── .vscode/
     └── settings.json
 ```
@@ -162,25 +162,6 @@ project-root/
 - [ ] heading 레벨(`h1` → `h2` → `h3`)이 순차적인가?
 - [ ] Prettier 자동 포맷팅 후 80자를 초과하는 이상한 줄바꿈은 없는가?
 - [ ] CSS 속성이 PostCSS 순서 규칙을 따르는가?
-
----
-
-## 7. 참고 예시 (정형화된 섹션 패턴)
-
-```html
-<!-- result section - 담당자 -->
-<section class="result" aria-labelledby="result-title">
-  <div class="container flex-column margin-auto">
-    <header class="result-header">
-      <h2 id="result-title" class="text-heading-2xl">검증된 성과</h2>
-      <p class="text-heading-l">숫자로 증명하는 이스트캠프의 실적</p>
-    </header>
-    <div class="result-grid">
-      <!-- 반복 콘텐츠 -->
-    </div>
-  </div>
-</section>
-```
 
 ---
 
