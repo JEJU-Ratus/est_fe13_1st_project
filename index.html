@@ -371,41 +371,67 @@
     <!-- CTA section - 남윤동 -->
     <section class="cta" aria-labelledby="cta-title">
       <div class="container">
+        <!-- cta-content: CTA 핵심 콘텐츠 래퍼 (flex column으로 세로 가운데 정렬) -->
         <div class="cta-content">
-          <div class="cta-badge">
+
+          <!-- 뱃지: common.css의 .badge 클래스를 재활용 (중복 CSS 방지) -->
+          <!-- .badge는 이미 inline-flex, gap, padding, 그라디언트 배경, pill 모양이 정의되어 있음 -->
+          <div class="badge">
             <span class="material-icons-outlined">rocket_launch</span>
             <span>프론트엔드 개발 14기 모집 중</span>
           </div>
 
+          <!-- CTA 메인 제목 -->
+          <!-- .cta-heading: 48px 크기, bold, 줄 높이 1.3 -->
           <h2 id="cta-title" class="cta-heading">
             4개월 후,<br />
+            <!-- .gradient-text: background-clip:text 기법으로 그라디언트 텍스트 구현 -->
             <span class="gradient-text">프론트엔드 개발자</span>로
           </h2>
 
+          <!-- CTA 부가 설명 -->
+          <!-- .cta-desc: 회색(#a0a0a0) 텍스트, 넓은 줄 간격(1.7) -->
           <p class="cta-desc">
             4개월 만에 프론트 엔드 개발자로의 전환,<br />
             이스트캠프와 함께라면 가능합니다
           </p>
 
+          <!-- 지원하기 버튼 -->
+          <!-- .btn-apply: 파란색 배경, 호버 시 위로 떠오르는 효과 -->
           <div class="cta-action">
             <a href="#" class="btn-apply">지원하기</a>
           </div>
         </div>
 
+        <!-- 구분선: 지원하기 버튼과 통계 영역 사이의 회색 가로 선 -->
+        <!-- hr 태그 = Horizontal Rule (수평선) -->
+        <!-- .cta-divider: border-top으로 1px 회색 선, 상하 margin 48px -->
         <hr class="cta-divider" />
+
+        <!-- 통계 영역: 3개 수치를 가로로 나란히 배치 -->
+        <!-- .cta-stats: display:flex, gap:60px, justify-content:center -->
         <div class="cta-stats">
+
+          <!-- 통계 항목 1: 완성기간 -->
+          <!-- .stat-item: 텍스트 가운데 정렬 -->
+          <!-- p:first-child → common.css에서 그라디언트 텍스트 스타일 자동 적용 -->
           <div class="stat-item">
-            <strong class="gradient-text">4개월</strong>
-            <span>완성기간</span>
+            <p>4개월</p>
+            <p>완성기간</p>
           </div>
+
+          <!-- 통계 항목 2: 취업성공율 -->
           <div class="stat-item">
-            <strong class="gradient-text">92%</strong>
-            <span>취업성공율</span>
+            <p>92%</p>
+            <p>취업성공율</p>
           </div>
+
+          <!-- 통계 항목 3: 취업 연계 -->
           <div class="stat-item">
-            <strong class="gradient-text">EST soft</strong>
-            <span>취업 연계</span>
+            <p>EST soft</p>
+            <p>취업 연계</p>
           </div>
+
         </div>
       </div>
     </section>
