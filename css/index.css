@@ -182,6 +182,8 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 999px;
+  letter-spacing: 0; /* 자간 초기화 */
+  white-space: nowrap; /* 텍스트 줄바꿈 방지 */
 }
 
 .result .partner-chip:hover {
@@ -210,6 +212,122 @@
   }
 }
 /* ------------ review ------------------------------ */
+.review {
+  /* section의 상하 패딩은 common.css 가이드(calc(var(--base-unit) * 3))를 따름 */
+  background-color: var(--color-bg-light);
+}
+
+.review-header {
+  text-align: center;
+  /* 여백을 base-unit(27px)의 배수로 설정하여 일관성 유지 */
+  margin-bottom: calc(var(--base-unit) * 2);
+}
+
+.review-subtitle {
+  color: var(--color-gray);
+  font-size: var(--body-l); /* common.css 20px 반영 */
+  margin-top: 8px;
+}
+
+/* Review Grid */
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--base-unit); /* 27px 간격 */
+  margin-bottom: calc(var(--base-unit) * 1.5);
+}
+
+/* Review Card */
+.review-card {
+  background: var(--color-white);
+  border-radius: 14px; /* icon-box의 곡률과 통일 */
+  box-shadow: 4px 16px 15px -7px rgba(0, 0, 0, 0.1); /* badge의 그림자값 활용 */
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-gray-20);
+  transition: all 0.2s ease; /* .btn의 트랜지션 타임 0.2s와 통일 */
+}
+
+.review-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-primary-75);
+}
+
+/* 별점 영역 */
+.review-rating {
+  color: #ffb800; /* 포인트 컬러 */
+  margin: 20px 20px 0; /* 내부 위치만 마진으로 고정 */
+}
+
+.review-rating span {
+  font-size: var(--body-l);
+}
+
+/* 후기 본문 */
+.review-text {
+  font-size: var(--body-m); /* 16px */
+  line-height: var(--base-unit); /* 27px */
+  color: var(--color-black);
+  margin: 16px 20px calc(var(--base-unit) * 1);
+  flex-grow: 1;
+}
+
+/* 작성자 정보 영역 */
+.review-author {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--color-bg-gray);
+  margin: 0 20px 20px;
+  padding-top: 16px;
+}
+
+.author-name {
+  display: block;
+  font-weight: var(--weight-bold);
+  font-size: var(--body-m);
+}
+
+.author-path {
+  font-size: var(--body-s); /* 14px */
+  color: var(--color-gray);
+}
+
+/* 기업 배지 - common.css의 뱃지 느낌 차용 */
+.company-badge {
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: var(--weight-medium);
+}
+
+.naver { background: #e7f9ed; color: #03c75a; }
+.kakao { background: #fff9e6; color: #3c1e1e; }
+.toss { background: #ebf3ff; color: #0064ff; }
+
+/* 하단 버튼 */
+.btn-review-more {
+  display: block;
+  text-align: center;
+  width: 100%;
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.btn-review-more:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* 반응형 */
+@media screen and (max-width: 1024px) {
+  .review-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media screen and (max-width: 768px) {
+  .review-grid { grid-size: 1fr; }
+  .review-header { margin-bottom: var(--base-unit); }
+}
 
 /* ------------ curriculum(안건욱) ------------------------------ */
 /* 커리큘럼 블록
