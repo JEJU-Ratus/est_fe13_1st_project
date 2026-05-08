@@ -1212,119 +1212,87 @@ details[open] summary::after {
 /* ── CTA 설명 텍스트 ────────────────────────── */
 /* Figma 스타일: gray = #717282 */
 .cta-desc {
-  /* Figma의 gray 색상 변수 사용 (common.css에서 #717282로 정의) */
   color: var(--color-gray);
-  /* 본문 크기 (16px) */
   font-size: var(--body-m);
-  /* 줄 간격 넓게 (가독성을 위해 1.7배) */
   line-height: 1.7;
 }
 
 /* ── CTA 액션 버튼 영역 ─────────────────────── */
 .cta-action {
-  /* 버튼 위에 추가 여백 */
   margin-top: 8px;
 }
 
 /* ── 지원하기 버튼 ──────────────────────────── */
-/* 스크린샷에서 파란색 사각형 버튼 */
 .btn-apply {
-  /* 인라인 블록으로 패딩이 적용되도록 */
   display: inline-block;
-  /* 내부 여백 (상하 16px, 좌우 48px) */
   padding: 16px 48px;
-  /* 파란색 배경 (프라이머리 컬러) */
   background-color: var(--color-primary);
-  /* 흰색 텍스트 */
   color: var(--color-white);
-  /* 밑줄 제거 (a 태그 기본 스타일 제거) */
   text-decoration: none;
-  /* 약간 둥근 모서리 */
   border-radius: 10px;
-  /* 글씨 크기 */
   font-size: var(--body-m);
-  /* 중간 굵기 */
   font-weight: var(--weight-medium);
-  /* 호버 시 부드러운 전환 효과 */
   transition: all 0.3s ease;
 }
 
 /* ── 지원하기 버튼 호버 효과 ──────────────────── */
 .btn-apply:hover {
-  /* 호버 시 약간 밝은 파란색으로 변경 */
   background-color: #2b7fff;
-  /* 위로 살짝 떠오르는 효과 */
   transform: translateY(-2px);
-  /* 그림자 추가로 입체감 부여 */
   box-shadow: 0 8px 24px rgba(21, 93, 252, 0.35);
 }
 
 /* ── CTA 구분선 (수평선) ────────────────────── */
-/* 스크린샷에서 지원하기 버튼과 4개월 통계 사이에 있는 가로 회색 선 */
-/* <hr> 태그는 HTML에서 수평 구분선을 의미하며, 기본 스타일을 리셋 후 재정의 */
 .cta-divider {
-  /* hr 태그의 기본 테두리를 완전히 제거 (브라우저마다 기본 스타일이 다름) */
   border: none;
-  /* 위쪽에만 1px 회색 실선을 새로 추가 */
-  /* rgba(0,0,0,0.12) = 검정색 12% 불투명도 → 아주 연한 회색 선 */
-  /* 흰색 배경 위에서 은은하게 보이도록 함 */
   border-top: 1px solid rgba(0, 0, 0, 0.12);
-  /* 구분선 위아래 각각 48px 여백을 줘서 콘텐츠와 충분한 간격 확보 */
   margin: 48px 0;
 }
 
 /* ── CTA 통계 영역 ──────────────────────────── */
 /* 스크린샷 하단의 "4개월 / 92% / EST soft" 수치 영역 */
 .cta-stats {
-  /* 가로 배치 (flex) */
   display: flex;
-  /* 항목 사이 간격 */
-  gap: 60px;
-  /* 가운데 정렬 */
   justify-content: center;
-  /* 세로 가운데 정렬 */
   align-items: center;
+  gap: 60px;
 }
 
-/* ── 개별 통계 항목 ─────────────────────────── */
-/* common.css(176~184줄)의 .stat-item 스타일이 기본으로 적용됨: */
-/*   - .stat-item > p { text-align: center; } */
-/*   - .stat-item p:first-child { background: gradient; background-clip: text; ... } */
-/* ★ 비슷한 코드: .curriculum-stat 클래스도 동일한 통계 표시 패턴 사용 */
+.cta-stats .stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
 
-/* .stat-item 숫자 텍스트 (첫 번째 p: "4개월", "92%", "EST soft") */
-/* Figma 스타일: body_2xl = 36px / 54px */
 .cta-stats .stat-item p:first-child {
-  /* 글씨를 두껍게 (bold = 700) → 숫자가 강조되어 눈에 잘 띔 */
-  font-weight: var(--gradient-blue-green);
-  /* 숫자와 설명 텍스트 사이 간격 (아래쪽 여백 8px) */
+  font-size: var(--body-2xl);
+  font-weight: 700;
+  line-height: 1.5;
   margin-bottom: 8px;
+  background: linear-gradient(90deg, #155dfc 0%, #00c950 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
-/* .stat-item 설명 텍스트 (두 번째 p: "완성기간", "취업성공율", "취업 연계") */
-.stat-item p:last-child {
-  /* 작은 글씨 (14px) - Figma body_s 크기 */
+.cta-stats .stat-item p:last-child {
   font-size: var(--body-s);
-  /* Figma의 gray 색상 사용 (#717282) */
   color: var(--color-gray);
 }
 
 /* ── CTA 반응형 (모바일) ────────────────────── */
 @media screen and (max-width: 768px) {
   .cta {
-    /* 모바일에서 상하 패딩 줄임 */
     padding: 60px 0;
   }
 
   .cta-heading {
-    /* 모바일에서 제목 크기 축소 */
     font-size: var(--heading-xl);
   }
 
   .cta-stats {
-    /* 모바일에서 세로 배치로 전환 */
     flex-direction: column;
-    /* 간격 줄임 */
     gap: 24px;
   }
 }
