@@ -215,7 +215,7 @@
   margin-bottom: 48px;
   text-align: center;
 }
-.curriculum-header h2 {
+.curriculum-header h3 {
   margin-bottom: 16px;
 }
 .curriculum-header p {
@@ -273,7 +273,7 @@
   flex: 1;
   min-width: 0;
 }
-.curriculum-slide-content > h3,
+.curriculum-slide-content > h4,
 .curriculum-slide-content > p {
   margin-bottom: 24px;
 }
@@ -481,7 +481,7 @@ details[open] summary::after {
   background: var(--gradient-purple-pink);
 }
 
-.curriculum-project h4 {
+.curriculum-project h5 {
   display: flex;
   gap: 0.5rem;
   align-items: center;
