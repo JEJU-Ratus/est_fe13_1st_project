@@ -141,7 +141,7 @@ header .container nav .text-nav:hover {
 @media (max-width: 1160px) {
   .hero-wrapper {
     flex-direction: column;
-    gap: 60px;
+    gap: calc(var(--base-unit) * 2);
   }
   .hero-content {
     align-items: center;
