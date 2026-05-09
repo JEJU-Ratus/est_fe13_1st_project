@@ -175,6 +175,9 @@ header .container nav .text-nav:hover {
     font-size: var(--heading-xl);
     line-height: 37px;
   }
+  .badge-wrapper {
+    flex-direction: column;
+  }
   .hero-video iframe {
     width: 328px;
     aspect-ratio: 16 / 9;
