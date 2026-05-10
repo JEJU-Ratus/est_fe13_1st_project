@@ -519,6 +519,7 @@
           <div
             class="curriculum-track"
             aria-roledescription="carousel"
+            aria-live="polite"
             tabindex="0">
             <article
               class="curriculum-slide curriculum-slide-1"
@@ -554,7 +555,7 @@
                     <li>정적 호스팅</li>
                   </ul>
                 </details>
-                <details>
+                <details class="curriculum-ai">
                   <summary class="curriculum-ai-title">
                     <span>
                       <span class="material-icons-outlined" aria-hidden="true">
@@ -647,7 +648,7 @@
                     <li>Web Vitals 분석</li>
                   </ul>
                 </details>
-                <details>
+                <details class="curriculum-ai">
                   <summary class="curriculum-ai-title">
                     <span>
                       <span class="material-icons-outlined" aria-hidden="true">
@@ -737,7 +738,7 @@
                     <li>성능 최적화</li>
                   </ul>
                 </details>
-                <details>
+                <details class="curriculum-ai">
                   <summary class="curriculum-ai-title">
                     <span>
                       <span class="material-icons-outlined" aria-hidden="true">
@@ -776,9 +777,7 @@
                     </span>
                     <span>프로젝트</span>
                   </h5>
-                  <p class="curriculum-project-name text-body-xl">
-                    팀 협업 SPA 프로젝트
-                  </p>
+                  <p class="curriculum-project-name">팀 협업 SPA 프로젝트</p>
                   <p>
                     React로 완성도 높은 Single Page Application을 팀과 함께
                     구축합니다
@@ -807,7 +806,7 @@
               href="#curriculum-slide-1"
               class="previous previous-first"
               aria-label="이전 슬라이드"
-              inert>
+              tabindex="-1">
               <span class="material-icons-outlined" aria-hidden="true">
                 arrow_back_ios_new
               </span>
@@ -853,7 +852,7 @@
               href="#curriculum-slide-3"
               class="next next-third"
               aria-label="다음 슬라이드"
-              inert>
+              tabindex="-1">
               <span class="material-icons-outlined" aria-hidden="true">
                 arrow_forward_ios
               </span>
