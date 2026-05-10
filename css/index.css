@@ -3,9 +3,9 @@
   align-content: center;
   box-shadow: 0px 4px 5px 0 rgba(0, 0, 0, 0.3);
   position: sticky;
-  height: 64px;
   top: 0;
   z-index: 1000;
+  height: 64px;
   height: 64px;
   background: var(--color-white);
 }
@@ -202,13 +202,13 @@ header .container nav .text-nav:hover {
 }
 .problem-wrapper {
   display: flex;
-  flex-direction: column;
   gap: 54px;
+  flex-direction: column;
 }
 .problem-content {
-  text-align: center;
   display: flex;
   gap: 18px;
+  text-align: center;
 }
 .problem-content h2 span {
   color: var(--color-primary);
@@ -227,20 +227,20 @@ header .container nav .text-nav:hover {
 }
 
 .problem-slide .slide {
-  width: 200%;
   display: flex;
   gap: 28px;
+  width: 200%;
 }
 .problem-slide .slide .question {
-  width: calc(100% / 3);
-  border: 1px solid #0000001a;
-  border-radius: 1.5rem;
   display: flex;
+  gap: 16px;
   flex-direction: column;
   padding: 25px 21px;
-  gap: 16px;
+  border: 1px solid #0000001a;
   position: relative;
+  width: calc(100% / 3);
   transition: transform 0.5s ease;
+  border-radius: 1.5rem;
 }
 .question .answer-box {
   display: flex;
@@ -276,26 +276,26 @@ header .container nav .text-nav:hover {
 }
 /* 버튼 */
 .slide-button {
+  align-content: center;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
   height: 50px;
-  align-content: center;
+  transform: translateX(-50%);
 }
 .slide-button label {
   display: none;
-  text-align: center;
   align-content: center;
   box-shadow:
     0 10px 15px -3px #0000001a,
     0 4px 6px -4px #0000001a;
   position: absolute;
+  top: 7px;
   width: 40px;
   height: 40px;
   background-color: white;
   color: #000;
+  text-align: center;
   border-radius: 50%;
-  top: 7px;
 }
 .slide-button label:hover {
   background-color: var(--color-primary);
@@ -779,7 +779,6 @@ header .container nav .text-nav:hover {
   margin: 0;
   padding: 48px;
   border: 1px solid #0000001a;
-  position: relative;
   max-width: 100%;
   background-color: var(--color-white);
   scroll-snap-align: center;
@@ -824,25 +823,8 @@ header .container nav .text-nav:hover {
 
 /* ── Details / Accordion base ───────────────── */
 /* details/summary 아코디언 기본
-   - `details` 요소를 커스텀 애니메이션으로 열고 닫기 위해 스타일을 적용
-   - `::details-content`는 브라우저별 구현 차이를 고려해 트랜지션을 설정 
-   - `interpolate-size: allow-keywords;`는 `block-size`를 `auto`로 애니매이션 가능하게 함*/
 details {
   overflow: hidden;
-  interpolate-size: allow-keywords;
-}
-
-/* `transition-behavior: allow-discrete;`는 `content-visibility`에 애니메이션 적용 가능하게 함 */
-details::details-content {
-  transition:
-    block-size 0.3s,
-    content-visibility 0.3s;
-  block-size: 0;
-  transition-behavior: allow-discrete;
-}
-
-details[open]::details-content {
-  block-size: auto;
 }
 
 /* summary(아코디언 제목)
@@ -1071,8 +1053,6 @@ details[open] summary::after {
   box-shadow:
     0 10px 15px -3px #0000001a,
     0 4px 6px -4px #0000001a;
-  position: absolute;
-  top: 50%;
   width: 40px;
   height: 40px;
   background-color: white;
@@ -1080,25 +1060,40 @@ details[open] summary::after {
   border-radius: 50%;
 }
 
-.previous {
-  transform: translate(-48px, -50%);
+.next:hover,
+.previous:hover {
+  background-color: var(--color-primary);
+  color: white;
 }
 
-.next {
-  right: 0;
-  transform: translate(0, -50%);
+/* 각 슬라이드가 선택됐을떼 버튼 보여줌 */
+.curriculum-track:not(:has(:target)) ~ .curriculum-navigation .next-first,
+.curriculum-track:not(:has(:target)) ~ .curriculum-navigation .previous-first,
+.curriculum-track:has(#card-1:target) ~ .curriculum-navigation .previous-first,
+.curriculum-track:has(#card-1:target) ~ .curriculum-navigation .next-first {
+  display: flex;
 }
 
-.curriculum-track:nth-child(2) :where(.next, .previous) {
+.curriculum-track:has(#card-2:target) ~ .curriculum-navigation .previous-second,
+.curriculum-track:has(#card-2:target) ~ .curriculum-navigation .next-second {
+  display: flex;
+}
+.curriculum-track:has(#card-3:target) ~ .curriculum-navigation .previous-third,
+.curriculum-track:has(#card-3:target) ~ .curriculum-navigation .next-third {
   display: flex;
 }
 
 /* 내비게이션 그룹 */
-.navigation-group {
+.curriculum-navigation {
   display: inline-flex;
   gap: 1.5rem;
   align-items: center;
+  margin-top: 24px;
   margin-inline: auto;
+}
+.navigation-group {
+  display: inline-flex;
+  gap: 1.5rem;
 }
 .navigation-group .material-icons-outlined {
   display: inline-flex;
@@ -1123,8 +1118,10 @@ details[open] summary::after {
   border-radius: 50%;
 }
 
+/* 슬라이드 선택됐을때 필모양으로 변경 */
 .curriculum-track:has(.curriculum-slide:nth-child(1))
-  ~ .navigation-indicators
+  ~ .curriculum-navigation
+  .navigation-indicators
   > *:nth-child(1) {
   width: 3rem;
   background: var(--gradient-blue-green);
@@ -1132,7 +1129,8 @@ details[open] summary::after {
 }
 
 .curriculum-track:has(.curriculum-slide:nth-child(2):target)
-  ~ .navigation-indicators
+  ~ .curriculum-navigation
+  .navigation-indicators
   > *:nth-child(2) {
   width: 3rem;
   background: var(--gradient-yellow-orange);
@@ -1140,14 +1138,16 @@ details[open] summary::after {
 }
 
 .curriculum-track:has(.curriculum-slide:nth-child(3):target)
-  ~ .navigation-indicators
+  ~ .curriculum-navigation
+  .navigation-indicators
   > *:nth-child(3) {
   width: 3rem;
   background: var(--gradient-purple-pink);
   border-radius: 999px;
 }
 .curriculum-track:has(:target:not(:first-child))
-  ~ .navigation-indicators
+  ~ .curriculum-navigation
+  .navigation-indicators
   > *:first-child {
   width: 0.75rem;
   height: 0.75rem;
