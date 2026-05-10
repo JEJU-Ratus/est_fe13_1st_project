@@ -1069,17 +1069,29 @@ details[open] summary::after {
 /* 각 슬라이드가 선택됐을떼 버튼 보여줌 */
 .curriculum-track:not(:has(:target)) ~ .curriculum-navigation .next-first,
 .curriculum-track:not(:has(:target)) ~ .curriculum-navigation .previous-first,
-.curriculum-track:has(#card-1:target) ~ .curriculum-navigation .previous-first,
-.curriculum-track:has(#card-1:target) ~ .curriculum-navigation .next-first {
+.curriculum-track:has(.curriculum-slide-1:target)
+  ~ .curriculum-navigation
+  .previous-first,
+.curriculum-track:has(.curriculum-slide-1:target)
+  ~ .curriculum-navigation
+  .next-first {
   display: flex;
 }
 
-.curriculum-track:has(#card-2:target) ~ .curriculum-navigation .previous-second,
-.curriculum-track:has(#card-2:target) ~ .curriculum-navigation .next-second {
+.curriculum-track:has(.curriculum-slide-2:target)
+  ~ .curriculum-navigation
+  .previous-second,
+.curriculum-track:has(.curriculum-slide-2:target)
+  ~ .curriculum-navigation
+  .next-second {
   display: flex;
 }
-.curriculum-track:has(#card-3:target) ~ .curriculum-navigation .previous-third,
-.curriculum-track:has(#card-3:target) ~ .curriculum-navigation .next-third {
+.curriculum-track:has(.curriculum-slide-3:target)
+  ~ .curriculum-navigation
+  .previous-third,
+.curriculum-track:has(.curriculum-slide-3:target)
+  ~ .curriculum-navigation
+  .next-third {
   display: flex;
 }
 
