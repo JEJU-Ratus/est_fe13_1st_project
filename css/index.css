@@ -1011,7 +1011,6 @@ details[open] summary::after {
 .cta-stats .stat-item p:first-child {
   font-size: var(--body-2xl);
   font-weight: var(--weight-bold);
-
   line-height: 40px;
   background: linear-gradient(90deg, #155dfc 0%, #00c950 100%);
   background-clip: text;
