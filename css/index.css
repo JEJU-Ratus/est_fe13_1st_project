@@ -822,8 +822,9 @@ header .container nav .text-nav:hover {
 }
 
 /* ── Details / Accordion base ───────────────── */
-/* details/summary 아코디언 기본
-details {
+/* details/summary 아코디언 기본 */
+.curriculum-core,
+.curriculum-ai {
   overflow: hidden;
 }
 
@@ -831,7 +832,8 @@ details {
    - 제목은 좌우 정렬로 요약 텍스트와 상태 아이콘을 배치
    - 포커스 시 접근성 표시를 추가하여 키보드 사용자에게 명확히 함
    - 커스텀 마커(아이콘)는 `::after`로 삽입해 회전 애니메이션 적용 */
-summary {
+.curriculum-core-title,
+.curriculum-ai-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -840,30 +842,35 @@ summary {
   cursor: pointer;
 }
 
-summary:focus-visible {
+.curriculum-core-title:focus-visible,
+.curriculum-ai-title:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 4px;
   border-radius: 8px;
 }
 
-summary > span {
+.curriculum-core-title > span,
+.curriculum-ai-title > span {
   display: inline-flex;
   gap: 8px;
   align-items: center;
 }
 
 /* 기본 마커를 material icons로 대체 */
-summary::-webkit-details-marker {
+.curriculum-core-title::-webkit-details-marker,
+.curriculum-ai-title::-webkit-details-marker {
   display: none;
 }
 
-summary::after {
+.curriculum-core-title::after,
+.curriculum-ai-title::after {
   font-family: "Material Icons";
   transition: transform 0.3s;
   content: "\e313";
 }
 
-details[open] summary::after {
+.curriculum-core[open] summary::after,
+.curriculum-ai[open] summary::after {
   transform: rotate(180deg);
 }
 
@@ -998,7 +1005,7 @@ details[open] summary::after {
 
 .curriculum-project-name {
   margin: 0 0 12px;
-  font-size: var(--text-body-xl);
+  font-size: var(--body-xl);
   font-weight: 700;
 }
 
@@ -1065,21 +1072,37 @@ details[open] summary::after {
   background-color: var(--color-primary);
   color: white;
 }
+.next.next-third,
+.previous.previous-first {
+  pointer-events: none;
+}
 
 /* 각 슬라이드가 선택됐을떼 버튼 보여줌 */
 .curriculum-track:not(:has(:target)) ~ .curriculum-navigation .next-first,
 .curriculum-track:not(:has(:target)) ~ .curriculum-navigation .previous-first,
-.curriculum-track:has(#card-1:target) ~ .curriculum-navigation .previous-first,
-.curriculum-track:has(#card-1:target) ~ .curriculum-navigation .next-first {
+.curriculum-track:has(.curriculum-slide-1:target)
+  ~ .curriculum-navigation
+  .previous-first,
+.curriculum-track:has(.curriculum-slide-1:target)
+  ~ .curriculum-navigation
+  .next-first {
   display: flex;
 }
 
-.curriculum-track:has(#card-2:target) ~ .curriculum-navigation .previous-second,
-.curriculum-track:has(#card-2:target) ~ .curriculum-navigation .next-second {
+.curriculum-track:has(.curriculum-slide-2:target)
+  ~ .curriculum-navigation
+  .previous-second,
+.curriculum-track:has(.curriculum-slide-2:target)
+  ~ .curriculum-navigation
+  .next-second {
   display: flex;
 }
-.curriculum-track:has(#card-3:target) ~ .curriculum-navigation .previous-third,
-.curriculum-track:has(#card-3:target) ~ .curriculum-navigation .next-third {
+.curriculum-track:has(.curriculum-slide-3:target)
+  ~ .curriculum-navigation
+  .previous-third,
+.curriculum-track:has(.curriculum-slide-3:target)
+  ~ .curriculum-navigation
+  .next-third {
   display: flex;
 }
 
