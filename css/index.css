@@ -785,7 +785,7 @@
 }
 @media screen and (max-width: 768px) {
   .review-grid {
-    grid-size: 1fr;
+    grid-template-columns: 1fr;
   }
   .review-header {
     margin-bottom: var(--base-unit);
