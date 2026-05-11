@@ -1221,8 +1221,9 @@ header .container nav .text-nav:hover {
 }
 
 /* ------------ cta ------------------------------ */
-.cta {
-  padding: 40px 0;
+.cta{
+  padding:80px 0;
+  color: var(--color-black);
   background-color: #ffffff;
   color: var(--color-black);
   text-align: center;
@@ -1271,7 +1272,6 @@ header .container nav .text-nav:hover {
   background-clip: text;
   font-size: var(--body-2xl);
   font-weight: var(--weight-bold);
-
   line-height: 40px;
   color: transparent;
 }
