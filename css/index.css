@@ -468,8 +468,8 @@ header .container nav .text-nav:hover {
   display: grid;
   gap: 20px;
   margin: 0 auto;
-  width: 90%;
-  max-width: 1200px;
+  width: 100%; 
+  max-width: none; 
   grid-template-columns: repeat(4, 1fr);
 }
 
@@ -533,11 +533,16 @@ header .container nav .text-nav:hover {
 
 .result .partner-list {
   display: flex;
-  gap: 12px;
+  gap: 8px;             
   justify-content: center;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  max-width: 1000px;
+  flex-wrap: nowrap;    /* 줄바꿈 금지 */
+  max-width: none;      /* 너비 제한 해제 */
+  width: 100%;
+}
+
+.result .partner-chip {
+  padding: 8px 18px;   
+  font-size: 0.85rem;
 }
 
 /* 기업 칩 스타일 (유리 효과 공통 적용) */
