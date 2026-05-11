@@ -39,7 +39,7 @@
 | 이름   | 역할      | 주요 담당 | GitHub                                            | 연락                    |
 | ------ | --------- | --------- | ------------------------------------------------- | ----------------------- |
 | 송민혁 | 팀장 · FE | 추후 수정 | [JEJU-Ratus](https://github.com/JEJU-Ratus)       | minhyeoksong3@gmail.com |
-| 안건욱 | FE        | 추후 수정 | [agw76638](https://github.com/agw76638)           | agw76638@g.kmou.ac.kr   |
+| 안건욱 | FE        | 추후 수정 | [agw76638](https://github.com/agw76638)           | agw76638@gmail.com      |
 | 김기용 | FE        | 추후 수정 | [KIYONG00](https://github.com/KIYONG00)           | dhkdwk0292@gmail.com    |
 | 남윤동 | FE        | 추후 수정 | [dbsehd125-bot](https://github.com/dbsehd125-bot) | dbsehd125@gmail.com     |
 | 강형규 | FE        | 추후 수정 | [hgkang2](https://github.com/hgkang2)             | hgkang2hank@gmail.com   |
@@ -237,7 +237,7 @@ gantt
 # 3. 프로젝트 구조
 
 ```bash
-FIRST_PROJECT/
+est_fe13_1st_project/
 ├─ .github/
 │  └─ CODEOWNERS
 ├─ .vscode/
