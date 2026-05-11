@@ -332,11 +332,13 @@
 }
 /* 버튼 */
 .slide-button {
-  align-content: center;
-  position: absolute;
-  left: 50%;
-  height: 50px;
-  transform: translateX(-50%);
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin-top: 24px;
+  margin-inline: auto;
 }
 .slide-button label {
   display: none;
@@ -344,7 +346,6 @@
   box-shadow:
     0 10px 15px -3px #0000001a,
     0 4px 6px -4px #0000001a;
-  position: absolute;
   top: 7px;
   width: 40px;
   height: 40px;
@@ -357,13 +358,6 @@
   background-color: var(--color-primary);
   color: white;
 }
-.slide-button .left {
-  transform: translateX(-150%);
-}
-.slide-button .right {
-  transform: translateX(330%);
-}
-
 .problem-slide [id="slide01"]:checked ~ .slide-button div label:nth-child(1) {
   display: inline-block;
 }
