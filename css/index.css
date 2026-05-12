@@ -695,14 +695,16 @@
   transform: translateY(-8px);
 }
 
-/* 별점 영역 */
+* 별점 영역 */
 .review-rating {
-  margin: 20px 20px 0; /* 내부 위치만 마진으로 고정 */
-  color: #966200; /* 포인트 컬러 */
+  margin: 20px 20px 0;
+  color: #966200; /* 기존 포인트 컬러 유지 */
 }
 
-.review-rating span {
-  font-size: var(--body-l);
+/* span에서 i 태그(혹은 .fa-star)로 변경 */
+.review-rating i {
+  font-size: 18px; /* Material Icon과 시각적 크기를 맞추기 위해 조정 */
+  margin-right: 2px; /* 아이콘 간격 미세 조정 */
 }
 
 /* 후기 본문 */
